@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import GithubCard from './Components/GithubCard';
+
+class App extends React.Component {
+  constructor() {
+    console.log('constructor');
+    super();
+    this.state = {
+      githubCard: []
+    };
+  }
+  componentDidMount() {
+    console.log('component did mount');
+  }
+  render() {
+    console.log('at render method');
+    return (
+      <div>
+        <GithubCard />
+        <h1>h1 at render</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
