@@ -1,21 +1,20 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
-const GithubCard = ({ avatar, name, joined, bio, followers, githubLink }) => (
+const GithubFollowerCard = ({ avatar, name, githubLink, created_at }) => (
   <Card>
     <Image src={avatar} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{name}</Card.Header>
       <Card.Meta>
-        <span className="date">Joined: {joined}</span>
+        <span className="date">{created_at}</span>
       </Card.Meta>
-      <Card.Description>{bio}</Card.Description>
+      <Card.Description>{githubLink}</Card.Description>
     </Card.Content>
     <Card.Content extra>
       <Icon name="github" />
-      {followers}
     </Card.Content>
   </Card>
 );
 
-export default GithubCard;
+export default GithubFollowerCard;
