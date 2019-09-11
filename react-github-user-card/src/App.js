@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
 
 import GithubCard from './Components/GithubCard';
 
@@ -8,18 +9,24 @@ class App extends React.Component {
     console.log('constructor');
     super();
     this.state = {
-      githubCard: []
+      users: {}
     };
   }
   componentDidMount() {
-    console.log('component did mount');
+    axios
+      .get('https://api.github.com/users/chilakiles12')
+      .then(response => console.log(response.data))
+      .then(response => this.setState({ users: response.data }))
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      });
   }
   render() {
-    console.log('at render method');
     return (
       <div>
-        <GithubCard />
-        <h1>h1 at render</h1>
+        <GithubCard users={this.state.users} />
+        <h1>{this.state.followers}</h1>
       </div>
     );
   }

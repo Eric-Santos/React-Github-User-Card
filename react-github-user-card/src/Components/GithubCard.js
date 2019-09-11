@@ -3,13 +3,15 @@
 import React from 'react';
 
 class GithubCard extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    console.log(this.state);
   }
+
   render() {
     return (
       <div>
-        <h1>github card</h1>
+        <h1>props.user.login</h1>
       </div>
     );
   }
