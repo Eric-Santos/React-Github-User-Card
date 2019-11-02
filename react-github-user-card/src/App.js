@@ -16,7 +16,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     axios
-      .get('https://api.github.com/users/chilakiles12')
+      .get('https://api.github.com/users/eric-santos')
       // .then(response => console.log(response.data))
       .then(response => this.setState({ users: response.data }))
       .catch(function(error) {
@@ -24,7 +24,7 @@ class App extends React.Component {
         console.log(error);
       });
     axios
-      .get('https://api.github.com/users/chilakiles12/followers')
+      .get('https://api.github.com/users/eric-santos/followers')
       .then(response => this.setState({ followers: response.data }))
       .catch(error => console.log(error));
   }
